@@ -1,0 +1,24 @@
+server:
+  port: 8761
+  profiles:
+    active: nativen
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistery: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    server:
+      withTineInMsWhenSyncEmpty: 0
+      
+management:
+  security:
+    enabled: false
+spring:
+  application:
+    name: euraka-server
+  boot:
+    admin:
+      context-path: /admin
